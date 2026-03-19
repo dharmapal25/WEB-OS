@@ -1,3 +1,4 @@
+// Tab.jsx
 import React, { useState } from 'react'
 import "./Tab.css"
 import { Rnd } from 'react-rnd'

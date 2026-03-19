@@ -18,46 +18,34 @@ h1 {
 }
 
 .tab-top-container .hr {
-    /* width: 100%; */
-    height: 0.1px;
+    /* height: 1px; */
     border: 0.1px solid #5757574d;
     box-shadow: 0 1.5px 2px #91919131;
 }
 
 .tab-top-container {
     position: absolute;
-    /* background: #272935ef; */
     top: 1.5% !important;
     background: #222020e1;
     border-radius: 10px;
     backdrop-filter: blur(5px);
     margin: 5px;
     min-width: 30vw !important;
-    max-width: 99vw !important;
-    cursor: default !important;
     min-height: 20vw !important;
+    cursor: default !important;
+    max-width: 99vw !important;
     max-height: 60vw !important;
     outline: 1px solid #444444;
 }
 
-
 .maxwidth {
-    /* position: fixed !important;
-    top: 0% !important ; */
-    transform: translate(0.2%,4%) !important ;
+    transform: translate(0.2%, 4%) !important;
     width: 100% !important;
-    height: 85% !important;
-    background: #2c2c2c ;
+    height: 80% !important;
+    background: #222531;
     transition: 0.1s;
-   background: #222531;
-   overflow: hidden !important;
+    overflow: hidden !important;
 }
-
-
-
-/* ----------------- */
-
-
 
 .nav-tab {
     border-radius: 10px 10px 0 0;
@@ -101,7 +89,6 @@ h1 {
     width: 16.5px;
     cursor: default;
     text-align: center;
-    
 }
 
 .nav-tab .tab-icons .icons {
@@ -113,7 +100,6 @@ h1 {
     padding: 2px;
     opacity: 0;
     transition: all 0.3s ease-in-out;
-
 }
 
 .nav-tab .tab-icons .icon-3 .icons {
@@ -126,9 +112,137 @@ h1 {
     opacity: 1;
 }
 
-
 .tab-top-container .contents-tab {
-    height: 78.6vh !important;
-    overflow-y: auto !important;
-    /* height: 70vh; */
+    overflow-y: hidden !important;
+    height: auto !important;
+    max-height: 80vh !important;
+}
+
+/* ── Tablet ──────────────────────────────────────────── */
+@media (max-width: 1024px) {
+    .tab-top-container {
+        min-width: 50vw !important;
+        max-width: 99vw !important;
+        width: 60vw !important;
+        height: 71% !important;
+        min-height: 30vw !important;
+        max-height: 80vw !important;
+        /* overflow: hidden; */
+    }
+
+    .maxwidth {
+        transform: translate(0.2%, 3%) !important;
+        height: 88% !important;
+    }
+
+    .nav-tab {
+        gap: 30px;
+        padding: 8px;
+    }
+
+    /* .tab-top-container {
+    top: 0% !important;
+    background: #222020e1;
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+    min-width: 50vw !important;
+    min-height: 71% !important;
+    cursor: default !important;
+    max-width: 99vw !important;
+    max-height: 60vw !important;
+    outline: 1px solid #444444;
+    overflow: hidden !important;
+} */
+
+}
+
+/* ── Mobile ──────────────────────────────────────────── */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 60px;
+    }
+
+    .tab-top-container {
+        min-width: 80vw !important;
+        max-width: 99vw !important;
+        min-height: 50vw !important;
+        max-height: 90vw !important;
+        margin: 3px;
+    }
+
+    .maxwidth {
+        transform: translate(0.2%, 2%) !important;
+        width: 99% !important;
+        height: 90% !important;
+    }
+
+    .nav-tab {
+        gap: 16px;
+        padding: 7px;
+    }
+
+    .nav-tab .tab-icons .icon-1,
+    .nav-tab .tab-icons .icon-2,
+    .nav-tab .tab-icons .icon-3 {
+        height: 14px;
+        width: 14px;
+    }
+
+    .nav-tab .tab-icons .icons {
+        height: 14px;
+        width: 14px;
+    }
+
+    .tab-top-container .contents-tab {
+        max-height: 75vh !important;
+    }
+}
+
+/* ── Small Mobile ────────────────────────────────────── */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 40px;
+    }
+
+    html,
+    body {
+        font-size: 16px;
+    }
+
+    .tab-top-container {
+        min-width: 95vw !important;
+        max-width: 99vw !important;
+        min-height: 60vw !important;
+        max-height: 95vw !important;
+        margin: 2px;
+        border-radius: 8px;
+    }
+
+    .maxwidth {
+        transform: translate(0%, 1.5%) !important;
+        width: 99% !important;
+        height: 92% !important;
+    }
+
+    .nav-tab {
+        gap: 10px;
+        padding: 6px;
+        border-radius: 8px 8px 0 0;
+    }
+
+    .nav-tab .tab-icons .icon-1,
+    .nav-tab .tab-icons .icon-2,
+    .nav-tab .tab-icons .icon-3 {
+        height: 12px;
+        width: 12px;
+    }
+
+    .nav-tab .tab-icons .icons {
+        height: 12px;
+        width: 12px;
+    }
+
+    .tab-top-container .contents-tab {
+        max-height: 70vh !important;
+    }
 }
