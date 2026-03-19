@@ -69,7 +69,8 @@ body {
 }
 
 .desktop-view .mac-nav .wifi-time .icons-div .control {
-    height: 17px
+    height: 18px;
+    cursor : pointer;
 }
 
 .desktop-view .mac-nav .wifi-time .icons-div .wifi {

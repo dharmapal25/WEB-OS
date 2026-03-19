@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import "./App.css"
 import Home from './Components/Home'
-
 const App = () => {
   const [imgLoaded, setImgLoaded] = useState(false)
 
   return (
     <>
+    <div className="app-div">
+
       {/*default wallpaper */}
       {/* <img src="https://ik.imagekit.io/cblndrocc/macos.jpg"
         className='appJsx-image'
@@ -28,6 +29,7 @@ const App = () => {
       />
 
       <Home />
+        </div>
     </>
   )
 }

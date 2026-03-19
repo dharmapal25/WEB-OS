@@ -1,0 +1,47 @@
+.Dropdown-div {
+    background: #5a5a5ac2;
+    position: absolute;
+    top: 3vw;
+    width: 24vw;
+    height: 10vw;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    padding: 5px;
+    
+}
+
+.input-div {
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    gap: 5px;
+}
+
+
+.range-input {
+    -webkit-appearance: none;
+    padding: 5px;
+    appearance: none;
+    width: 100%;
+    height: 40px;
+    border-radius: 999px;
+    background: linear-gradient(
+        to right,
+        #97979783 var(--val, 50%),
+        #b4b4b4 var(--val, 50%)
+    );
+    outline: none;
+    cursor: pointer;
+}
+
+.range-input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: #ffffffc5;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+    cursor: pointer;
+    transition: transform 0.15s ease-in-out;
+}
