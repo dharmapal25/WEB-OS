@@ -5,6 +5,7 @@
     top: 10%;
     left: 0;
     width: 100%;
+    overflow: auto !important;
 }
 
 .notes-div {
@@ -31,8 +32,8 @@
     height: 80vh;
     padding: 5px;
     border-radius: 0 0 0 10px;
-    /* overflow-y: auto;
-    overflow-x: hidden; */
+    overflow-y: auto;
+    overflow-x: hidden;
     scrollbar-width: thin;
     transition: width 0.3s ease;
     flex-shrink: 0;

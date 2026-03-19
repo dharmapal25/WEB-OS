@@ -4,7 +4,7 @@
     margin: 5px;
     gap: 5px;
     flex-wrap: wrap;
-    /* overflow: auto !important; */
+    overflow: auto !important;
 }
 
 .musics {
