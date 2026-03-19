@@ -115,13 +115,12 @@ import gallery from "../Images/Icons/gallery.png"
 import mac_os from "../Images/Icons/mac os.png"
 import music from "../Images/Icons/music.png"
 import Netflix from "../Images/Icons/Netflix.png"
-import PS5 from "../Images/Icons/PS5.png"
-// import recycle from "../Images/Icons/recycle.png"
-import recycle from "../Images/Icons/Text Edit.png"
+import recycle from "../Images/Icons/recycle.png"
+import notepad from "../Images/Icons/Text Edit.png"
 import vscode from "../Images/Icons/vscode.png"
 import terminal from "../Images/Icons/terminall.png"
 import setting from "../Images/Icons/setting.png"
-import app_store from "../Images/Icons/app store.png"
+import docs from "../Images/Icons/docs.png"
 
 import "./BottomNav.css"
 import Tab from './Tab'
@@ -154,22 +153,23 @@ const BottomNav = () => {
                 />
             ))}
 
+
             <div className="bottom-nav">
                 <div className="software-icons">
                     <div className="icon-div">
                         <img className="icon" src={mac_os} alt="mac_os" draggable="false" onClick={() => openApp("mac_os")} />
-                        <img className="icon" src={app_store} alt="app_store" draggable="false" onClick={() => openApp("app_store")} />
+                        <img className="icon" src={docs} alt="Docs" draggable="false" onClick={() => openApp("Docs")} />
                         <img className="icon" src={music} alt="music" draggable="false" onClick={() => openApp("music")} />
                         <img className="icon" src={gallery} alt="gallery" draggable="false" onClick={() => openApp("gallery")} />
                         <img className="icon" src={Netflix} alt="Netflix" draggable="false" onClick={() => openApp("Netflix")} />
-                        <img className="icon" src={PS5} alt="PS5" draggable="false" onClick={() => openApp("PS5")} />
                         <img className="icon" src={setting} alt="setting" draggable="false" onClick={() => openApp("setting")} />
                         <img className="icon" src={vscode} alt="vscode" draggable="false" onClick={() => openApp("vscode")} />
+                            <img className="icon" src={notepad} alt="recycle" draggable="false" onClick={() => openApp("notepad")} />
                         <img className="icon" src={calculator} alt="calculator" draggable="false" onClick={() => openApp("calculator")} />
                         <img className="icon" src={terminal} alt="terminal" draggable="false" onClick={() => openApp("terminal")} />
                         <hr className='bar' />
                         <div className="side-icon">
-                            <img className="icon" src={recycle} alt="recycle" draggable="false" onClick={() => openApp("notepad")} />
+                            <img className="icon" src={recycle} alt="recycle" draggable="false" onClick={() => openApp("recycle")} />
                         </div>
                     </div>
                 </div>

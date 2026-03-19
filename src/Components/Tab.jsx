@@ -8,6 +8,7 @@ import Notepad from './Pages/Notepad';
 import Music from './Pages/Music';
 import Empty from './Pages/Empty';
 import Setting from './Pages/Setting';
+import Docs from './Pages/Docs';
 
 const Tab = ({ appName, closeApp }) => {
 
@@ -40,6 +41,10 @@ const Tab = ({ appName, closeApp }) => {
             case "setting":
                 obj = { setting: "Setting" }
                 return <Setting />
+
+            case "Docs":
+                obj = { docs: "Documents" }
+                return <Docs />
 
             default:
                 return <Empty />
@@ -97,6 +102,7 @@ const Tab = ({ appName, closeApp }) => {
                     <p> {(appName == "notepad") ? "Notepad" : ""}</p>
                     <p> {(appName == "music") ? "Music" : ""}</p>
                     <p> {(appName == "setting") ? "Setting" : ""}</p>
+                    <p> {(appName == "Docs") ? "Documents" : ""}</p>
 
                 </div>
             </div>
