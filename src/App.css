@@ -314,3 +314,37 @@ h1 {
 sup {
     font-size: 1vw
 }
+
+
+.loading-screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #242424f1;
+    height: 100vh;
+    animation: name duration timing-function delay iteration-count direction fill-mode;
+}
+
+.load {
+    position: fixed;
+    top: -50vw;
+    left: -20vw;
+    height: 200vh;
+    outline: none;
+    rotate: 20deg;
+    border: none;
+    box-shadow: 0 0 10vw 3vw #a8a8a8;
+    animation: load 2s 0.5s ease-in-out infinite;  
+}
+
+@keyframes load {
+    
+    0% {
+        transform: translateX(0vw);
+    }
+    
+    100% {
+        transform: translateX(150vw);
+
+    }
+}

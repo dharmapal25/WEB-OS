@@ -103,7 +103,7 @@ const Tab = ({ appName, closeApp }) => {
 
             <hr className='hr' />
 
-            <div className="contents-tab" draggable="false">
+            <div className="contents-tab">
                 {renderContent()}
             </div>
         </Rnd>

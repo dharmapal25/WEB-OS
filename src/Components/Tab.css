@@ -125,3 +125,10 @@ h1 {
     transition: all 0.3s ease-in-out;
     opacity: 1;
 }
+
+
+.tab-top-container .contents-tab {
+    height: 78.6vh !important;
+    overflow-y: auto !important;
+    /* height: 70vh; */
+}

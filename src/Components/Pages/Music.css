@@ -1,10 +1,88 @@
 .music-div {
     display: flex;
+    justify-content: center;
     margin: 5px;
     gap: 5px;
     flex-wrap: wrap;
+    /* overflow: auto !important; */
 }
 
 .musics {
-    width: 25%;
+    width: 100%;
+    border-radius: 12px;
+}
+
+.iframe-div {
+    position: relative;
+
+    width: 48%;
+    height: 60vh !important;
+    iframe {
+        height: 60vh;
+
+    }
+    
+}
+
+.loading-screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #242424f1;
+    height: 100vh;
+
+}
+
+.load {
+    position: absolute;
+    top: -50vw;
+    left: -20vw;
+
+    height: 500vh;
+    outline: none;
+    rotate: 20deg;
+    border: none;
+    box-shadow: 0 0 10vw 3vw #a8a8a8;
+    animation: load 3s 0.5s ease-in-out infinite;  
+}
+
+@keyframes load {
+
+    0% {
+        transform: translateX(-20vw);
+    }
+    
+    100% {
+        transform: translateX(200vw);
+
+    }
+}
+
+
+
+/* ── Responsive ──────────────────────────────────────── */
+
+/* tablet — still 2 columns but tighter */
+@media (max-width: 768px) {
+    .music-div {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 8px;
+        padding: 8px;
+    }
+}
+
+/* mobile — single column */
+@media (max-width: 480px) {
+    .music-div {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        padding: 8px;
+        height: auto;
+        min-height: 100vh;
+    }
+
+    .iframe-div {
+        height: 300px;
+    }
 }
