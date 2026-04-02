@@ -2,7 +2,7 @@
 import React, { useState } from 'react'
 import "./Tab.css"
 import { Rnd } from 'react-rnd'
-import Vscode from './Pages/Vscode';
+// import GitHub from './Pages/Github';
 import Calculator from './Pages/Calculator';
 import CLI from './Pages/CLI';
 import Notepad from './Pages/Notepad';
@@ -46,6 +46,10 @@ const Tab = ({ appName, closeApp }) => {
             case "Docs":
                 obj = { docs: "Documents" }
                 return <Docs />
+
+            // case "GitHub":
+            //     obj = { github: "GitHub" }
+            //     return <GitHub />
 
             default:
                 return <Empty />
@@ -104,6 +108,7 @@ const Tab = ({ appName, closeApp }) => {
                     <p> {(appName == "music") ? "Music" : ""}</p>
                     <p> {(appName == "setting") ? "Setting" : ""}</p>
                     <p> {(appName == "Docs") ? "Documents" : ""}</p>
+                    {/* <p> {(appName == "GitHub") ? "GitHub" : ""}</p> */}
 
                 </div>
             </div>

@@ -3,7 +3,7 @@ import "../App.css"
 import TopNav from './TopNav'
 import BottomNav from './BottomNav'
 import Tab from './Tab'
-import Vscode from './Pages/Vscode'
+import Vscode from './Pages/Github'
 
 
 const Home = () => {

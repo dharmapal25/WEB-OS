@@ -108,3 +108,98 @@
     gap: 10px;
     margin: 10px;
 }
+
+.tab-style-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+}
+
+.tab-style-box {
+    display: flex;
+    gap: 30px;
+    padding: 30px;
+    background: linear-gradient(135deg, #2c2c2c 0%, #1a1a1a 100%);
+    border: 2px solid #4a9eff;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(74, 158, 255, 0.2),
+                inset 0 1px 1px rgba(255, 255, 255, 0.1);
+}
+
+.tab-style-section {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    background: linear-gradient(135deg, #1f1f1f 0%, #151515 100%);
+    border: 1.5px solid #3a5a8a;
+    border-radius: 12px;
+    min-width: 180px;
+}
+
+.tab-style-section h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #7a9eff;
+    text-align: center;
+    letter-spacing: 0.5px;
+}
+
+.tab-style-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.tab-style-btn {
+    padding: 10px 15px;
+    background: linear-gradient(135deg, #2a4a6a 0%, #1a3a5a 100%);
+    border: 1.5px solid #4a6a8a;
+    color: #b0d0ff;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.tab-style-btn:hover {
+    background: linear-gradient(135deg, #3a5a7a 0%, #2a4a6a 100%);
+    border-color: #6a8aaa;
+    transform: translateX(2px);
+}
+
+.tab-style-btn.active {
+    background: linear-gradient(135deg, #4a9eff 0%, #2a7eff 100%);
+    border-color: #7abaff;
+    color: #ffffff;
+    box-shadow: 0 0 15px rgba(74, 158, 255, 0.4);
+}
+
+.tab-style-set-btn {
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+    border: none;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    margin-top: 5px;
+    box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+}
+
+.tab-style-set-btn:hover {
+    background: linear-gradient(135deg, #5CBF60 0%, #4CAF50 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(76, 175, 80, 0.4);
+}
+
+.tab-style-set-btn:active {
+    transform: translateY(0);
+}

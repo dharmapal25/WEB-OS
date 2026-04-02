@@ -47,9 +47,9 @@ const TopNav = () => {
 
                 <div className="wifi-time">
                     <div className="icons-div">
-                        <img src={wifi} alt="wifi" className='wifi' />
-                        <img src={search} alt="search" className='search' />
-                        <img src={control} alt="control" className='control' onClick={dropDownCall} />
+                        <img draggable="false" src={wifi} alt="wifi" className='wifi' />
+                        <img draggable="false" src={search} alt="search" className='search' />
+                        <img draggable="false" src={control} alt="control" className='control' onClick={dropDownCall} />
 
                         {
                             (dropdown) ? <Dropdown/> : ""

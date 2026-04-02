@@ -3,7 +3,13 @@
     padding: 0;
     box-sizing: border-box;
     -webkit-user-select: none;
-    user-select: none
+    user-select: none;
+}
+
+:root {
+    --font-size: 14px;
+    --font-color: #000000;
+    --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 html,
@@ -11,8 +17,15 @@ body {
     height: 100%;
     width: 100%;
     color: #cfcfcf;
-    scrollbar-width: none
+    scrollbar-width: none;
+    font-size: var(--font-size);
+    color: var(--font-color);
+    font-family: var(--font-family);
 }
+
+/* .desktop-view {
+    display: none;
+} */
 
 .appJsx-image {
     object-fit: cover;
@@ -325,7 +338,7 @@ sup {
     height: 100vh;
     animation: name duration timing-function delay iteration-count direction fill-mode;
 }
-
+/* 
 .load {
     position: fixed;
     top: -50vw;
@@ -348,4 +361,17 @@ sup {
         transform: translateX(150vw);
 
     }
+} */
+
+
+@media (max-width : 1000px) {
+    
+    .app-div {
+        display: none;
+    }
+
+    /* .desktop-view {
+        display: block;
+    } */
+
 }

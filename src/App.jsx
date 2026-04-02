@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import "./App.css"
 import Home from './Components/Home'
+import Mobile from './Components/Pages/Mobile'
 
 const App = () => {
   const [imgLoaded, setImgLoaded] = useState(false)
@@ -20,6 +21,7 @@ const App = () => {
 
   return (
     <>
+    <Mobile/>
     <div className="app-div">
 
       {/* fallback default wallpaper */}
