@@ -21,32 +21,24 @@ const App = () => {
 
   return (
     <>
-    <Mobile/>
-    <div className="app-div">
-
-      {/* fallback default wallpaper */}
-      <img src="https://ik.imagekit.io/cblndrocc/macos.jpg"
-        className='appJsx-image'
-        draggable="false"
-      />
-
-      {/* dynamic wallpaper with correct path */}
-      {bgImageUrl && (
-        <img
-          src={bgImageUrl}
-          onLoad={() => setImgLoaded(true)}
-          onError={() => {
-            setImgLoaded(true)
-            console.warn(`Image not found: ${bgImageUrl}`)
-          }}
+      <Mobile />
+      <div className="app-div">
+        <img src="https://ik.imagekit.io/cblndrocc/macos.jpg"
           className='appJsx-image'
           draggable="false"
-          style={{ opacity: imgLoaded ? 1 : 0 }}
         />
-      )}
-
-      <Home />
-        </div>
+        {bgImageUrl && (
+          <img
+            src={bgImageUrl}
+            onLoad={() => setImgLoaded(true)}
+            onError={() => setImgLoaded(true)}
+            className='appJsx-image'
+            draggable="false"
+            style={{ opacity: imgLoaded ? 1 : 0 }}
+          />
+        )}
+        <Home />
+      </div>
     </>
   )
 }

@@ -1,8 +1,6 @@
-// Tab.jsx
 import React, { useState } from 'react'
 import "./Tab.css"
 import { Rnd } from 'react-rnd'
-// import GitHub from './Pages/Github';
 import Calculator from './Pages/Calculator';
 import CLI from './Pages/CLI';
 import Notepad from './Pages/Notepad';
@@ -16,69 +14,39 @@ const Tab = ({ appName, closeApp }) => {
     const [ZIndex, setZIndex] = useState(1);
     const [widthTab, setwidthTab] = useState(true);
 
-    let obj;
-
     function renderContent() {
         switch (appName) {
-            case "vscode":
-                obj = { vscode: "VS code" }
-                return <Vscode />
             case "calculator":
-                obj = { Calculator: "Calculator" }
-                return <Calculator style={{ maxWidth : "503px" }} />
-
+                return <Calculator style={{ maxWidth: "503px" }} />
             case "terminal":
-                obj = { terminal: "Terminal" }
                 return <CLI />
-
             case "notepad":
-                obj = { nodepad: "Notepad" }
                 return <Notepad />
-
             case "music":
-                obj = { music: "music" }
                 return <Music />
-
             case "setting":
-                obj = { setting: "Setting" }
                 return <Setting />
-
             case "Docs":
-                obj = { docs: "Documents" }
                 return <Docs />
-
-            // case "GitHub":
-            //     obj = { github: "GitHub" }
-            //     return <GitHub />
-
             default:
                 return <Empty />
         }
     }
 
     function maxWidthTab() {
-        // console.log("first")
         setwidthTab(!widthTab)
-        // sethightTab(0)
-        // renderContent()
     }
 
-    // If no appName, don't render anything
     if (!appName) return null;
 
     return (
         <Rnd className={`tab-top-container ${(!widthTab) ? "maxwidth" : ""}`}
             default={{
                 x: Math.floor(Math.random() * 750),
-                y: Math.floor(Math.random() * 380),
-
-                // width: widthTab,
-                // height: 200,
+                y: Math.floor(Math.random() * 380)
             }}
             style={{ zIndex: ZIndex }}
             onClick={() => setZIndex(ZIndex + 1)}>
-            {/* {console.log(widthTab)} */}
-
             <div className='nav-tab' onDoubleClick={maxWidthTab}>
                 <div className="tab-icons">
                     <div className="icon-1 " onClick={() => closeApp(appName)} >
@@ -102,13 +70,11 @@ const Tab = ({ appName, closeApp }) => {
 
                 <div className="tab-name">
 
-                    <p> {(appName == "vscode") ? "vscode" : ""}</p>
-                    <p> {(appName == "calculator") ? "Calculator" : ""}</p>
-                    <p> {(appName == "notepad") ? "Notepad" : ""}</p>
-                    <p> {(appName == "music") ? "Music" : ""}</p>
-                    <p> {(appName == "setting") ? "Setting" : ""}</p>
-                    <p> {(appName == "Docs") ? "Documents" : ""}</p>
-                    {/* <p> {(appName == "GitHub") ? "GitHub" : ""}</p> */}
+                    <p>{appName === "calculator" && "Calculator"}</p>
+                    <p>{appName === "notepad" && "Notepad"}</p>
+                    <p>{appName === "music" && "Music"}</p>
+                    <p>{appName === "setting" && "Setting"}</p>
+                    <p>{appName === "Docs" && "Documents"}</p>
 
                 </div>
             </div>
