@@ -1,40 +1,57 @@
 .Setting-div {
-    /* background: #6e2a2a; */
     display: flex;
     width: 100%;
     height: auto;
-    padding: 5px;
+    padding: 10px;
     overflow: hidden;
+    gap: 10px;
 }
 
 .Setting-nav {
-    padding: 0 5px;
+    padding: 10px;
     display: flex;
     gap: 1vw;
     flex-direction: column;
     width: calc(100% - 78%);
+    background: linear-gradient(180deg, #5a5a5a 0%, #4a4a4a 100%);
+    border-radius: 8px;
+    min-width: 120px;
+    max-width: 200px;
 }
 
 .Setting-nav .themes,
 .Wallpapers,
 .Tab-style {
-    padding: 0.5vw 1vw;
+    padding: 10px 15px;
     cursor: pointer;
-    background: #63626262;
-    border-radius: 5px;
+    background: linear-gradient(135deg, #63626262 0%, #5a5a5a62 100%);
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.Setting-nav .themes:hover,
+.Wallpapers:hover,
+.Tab-style:hover {
+    background: linear-gradient(135deg, #73726272 0%, #6a6a6a72 100%);
+    border-color: #8a8a8a;
+    transform: translateX(4px);
 }
 
 .span-color {
     background: #616161 !important;
+    border-color: #7a7a7a !important;
 }
 
-
 .Setting-body {
-    background: #696969b0;
+    background: linear-gradient(135deg, #696969b0 0%, #5a5a5ab0 100%);
     width: 100%;
     height: 80vh;
     overflow: auto !important;
-
+    border-radius: 8px;
+    padding: 15px;
 }
 
 

@@ -1,22 +1,45 @@
 * {
     scrollbar-width: thin;
-
 }
+
 span[name="react-console-emulator__promptLabel"] {
     color: #2aaa64 !important;
     margin-top: 2% !important;
+    font-weight: 600;
 }
 
 input[name="react-console-emulator__input"] {
     margin-top: 2% !important;
-
+    font-family: 'Courier New', monospace;
 }
 
 .CLI-div {
     height: 80vh;
     overflow: auto;
+    background: #0a0a0a;
+    border-radius: 8px;
+    padding: 10px;
 }
 
 div [name="react-console-emulator"] {
     height: 100% !important;
+    font-family: 'Courier New', monospace;
+}
+
+.CLI-div::-webkit-scrollbar {
+    width: 8px;
+}
+
+.CLI-div::-webkit-scrollbar-track {
+    background: #1a1a1a;
+    border-radius: 4px;
+}
+
+.CLI-div::-webkit-scrollbar-thumb {
+    background: #333333;
+    border-radius: 4px;
+}
+
+.CLI-div::-webkit-scrollbar-thumb:hover {
+    background: #444444;
 }

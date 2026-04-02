@@ -1,6 +1,4 @@
-* Tab.css */
-
-* {
+* Tab.css */ * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -45,14 +43,13 @@ h1 {
 
 .maxwidth {
     position: fixed !important;
-    top: 0% !important ;
-    transform: translate(0.2%,4%) !important ;
+    top: 0% !important;
+    transform: translate(0.2%, 4%) !important;
     width: 100% !important;
     height: 85% !important;
-    background: #2c2c2c ;
     transition: 0.1s;
-   background: #222531;
-   overflow: hidden !important;
+    background: linear-gradient(135deg, #2a2a2a 0%, #1f1f1f 100%);
+    overflow: hidden !important;
 }
 
 
@@ -103,7 +100,7 @@ h1 {
     width: 16.5px;
     cursor: default;
     text-align: center;
-    
+
 }
 
 .nav-tab .tab-icons .icons {
@@ -131,12 +128,7 @@ h1 {
 
 .tab-top-container .contents-tab {
     /* height: 78.6vh !important; */
-    overflow-y: hidden !important;
+    overflow-y: auto !important;
     height: auto !important;
     max-height: 80vh !important;
-}
-
-
-@media (min-width : 600px) and (max-width : 1100px) {
-    
 }

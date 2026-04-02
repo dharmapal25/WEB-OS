@@ -1,30 +1,35 @@
 .Dropdown-div {
-    background: #5a5a5ac2;
+    background: linear-gradient(135deg, #5a5a5ac2 0%, #4a4a4ac2 100%);
     position: absolute;
     top: 3vw;
     width: 24vw;
     height: 10vw;
     display: flex;
     flex-direction: column;
-    border-radius: 10px;
-    padding: 5px;
-    
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
+    border: 1px solid #ffffff1a;
+    transition: all 0.3s ease;
+}
+
+.Dropdown-div:hover {
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5);
 }
 
 .input-div {
     display: flex;
     flex-direction: column;
-    padding: 5px;
-    gap: 5px;
+    padding: 8px 0;
+    gap: 10px;
 }
-
 
 .range-input {
     -webkit-appearance: none;
-    padding: 5px;
     appearance: none;
     width: 100%;
-    height: 40px;
+    height: 6px;
     border-radius: 999px;
     background: linear-gradient(
         to right,
@@ -33,15 +38,22 @@
     );
     outline: none;
     cursor: pointer;
+    transition: all 0.2s ease;
 }
 
 .range-input::-webkit-slider-thumb {
     -webkit-appearance: none;
-    width: 35px;
-    height: 35px;
+    width: 18px;
+    height: 18px;
     border-radius: 50%;
     background: #ffffffc5;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
     cursor: pointer;
-    transition: transform 0.15s ease-in-out;
+    transition: all 0.15s ease-in-out;
+    border: 2px solid #ffffff;
+}
+
+.range-input::-webkit-slider-thumb:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
 }

@@ -32,8 +32,7 @@ const Music = () => {
                         </div>
                     )}
 
-                    <iframe
-                        onLoad={() => handleLoad(index)}
+                    <iframe onLoad={() => handleLoad(index)}
                         onError={() => handleLoad(index)}
                         style={{
                             opacity: loadedStates[index] ? 1 : 0

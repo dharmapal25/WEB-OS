@@ -71,7 +71,7 @@ const Tab = ({ appName, closeApp }) => {
                 // width: widthTab,
                 // height: 200,
             }}
-            style={{ zIndex: ZIndex, width: "100vw" }}
+            style={{ zIndex: ZIndex }}
             onClick={() => setZIndex(ZIndex + 1)}>
             {/* {console.log(widthTab)} */}
 

@@ -5,4 +5,15 @@
     height: 50vh;
     color: #929292;
     font-size: 1.3vw;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.Empty::before {
+    content: '';
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #5a5a5a 0%, #4a4a4a 100%);
+    border-radius: 50%;
+    opacity: 0.5;
 }

@@ -36,6 +36,16 @@ const Notepad = () => {
         setFilearr(updatedArr)
     }
 
+    const deleteFile = (index) => {
+        const updatedArr = filearr.filter((_, i) => i !== index)
+        setFilearr(updatedArr)
+        if (selectIdx === index) {
+            setSelectIdx(null)
+        } else if (selectIdx > index) {
+            setSelectIdx(selectIdx - 1)
+        }
+    }
+
     useEffect(() => {
         localStorage.setItem("arr", JSON.stringify(filearr))
     }, [filearr])
@@ -43,13 +53,14 @@ const Notepad = () => {
     return (
         <>
             <form className='pop-up' style={{ display: popup ? "" : "none" }} onSubmit={submitData}>
-                <img src={close} className='cut icons-class' onClick={() => setPopup(false)} />
+                <img src={close} className='cut icons-class' onClick={() => setPopup(false)} alt="close" />
                 <input
                     type="text"
                     name='file'
                     value={change}
                     placeholder='Enter file name..'
                     required
+                    autoFocus
                     onChange={(e) => setChange(e.target.value)}
                 />
                 <textarea
@@ -59,7 +70,7 @@ const Notepad = () => {
                     placeholder='Write something..'
                     onChange={(e) => setChangetxt(e.target.value)}
                 />
-                <button className='save' type="submit">Save</button>
+                <button className='save' type="submit">Save File</button>
             </form>
 
             <div className="main-notes-div">
@@ -67,35 +78,60 @@ const Notepad = () => {
 
                     <div className={`filename-div ${menuIcon ? "menu-open" : "menu-closed"}`}>
                         <div className="new-file-div">
-                            <img src={add} alt="add" className="new-file icons-class" onClick={() => setPopup(true)} />
-                            <img src={menu} alt="menu" className="new-file icons-class" onClick={() => setMenuIcon(!menuIcon)} />
+                            <img src={add} alt="add" className="new-file icons-class" onClick={() => setPopup(true)} title="New File" />
+                            <img src={menu} alt="menu" className="new-file icons-class" onClick={() => setMenuIcon(!menuIcon)} title={menuIcon ? "Hide Files" : "Show Files"} />
                         </div>
 
-                        {filearr.map((item, index) => (
-                            <input
-                                key={index}
-                                type="text"
-                                className='filename'
-                                value={item.file}
-                                readOnly
-                                onClick={() => setSelectIdx(index)}
-                                style={{
-                                    cursor: "pointer",
-                                    borderRadius: "5px",
-                                    fontSize: "19px",
-                                    background: selectIdx === index ? "#8b8b8bab" : ""
-                                }}
-                            />
-                        ))}
+                        {filearr.length === 0 ? (
+                            <div style={{ padding: '15px', textAlign: 'center', color: '#7a7a7a', fontSize: '12px' }}>
+                                No files yet. Create one!
+                            </div>
+                        ) : (
+                            filearr.map((item, index) => (
+                                <div key={index} style={{ position: 'relative', group: 'file' }}>
+                                    <input
+                                        type="text"
+                                        className='filename'
+                                        value={item.file}
+                                        readOnly
+                                        onClick={() => setSelectIdx(index)}
+                                        title={item.file}
+                                        style={{
+                                            cursor: "pointer",
+                                            background: selectIdx === index
+                                                ? "linear-gradient(135deg, #5a8fff 0%, #4a7fff 100%)"
+                                                : ""
+                                        }}
+                                    />
+                                </div>
+                            ))
+                        )}
                     </div>
 
                     <div className="filecontants-div">
-                        {selectIdx !== null && filearr[selectIdx] && (
-                            <textarea
-                                className="filecontants"
-                                value={filearr[selectIdx].data}
-                                onChange={(e) => handleContentChange(e, selectIdx)}
-                            />
+                        {selectIdx !== null && filearr[selectIdx] ? (
+                            <>
+                                <textarea
+                                    className="filecontants"
+                                    value={filearr[selectIdx].data}
+                                    onChange={(e) => handleContentChange(e, selectIdx)}
+                                    placeholder="Start typing..."
+                                />
+                            </>
+                        ) : (
+                            <div style={{
+                                width: '100%',
+                                height: '100%',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                color: '#5a5a5a',
+                                fontSize: '18px',
+                                textAlign: 'center',
+                                padding: '20px'
+                            }}>
+                                <p>Select a file to start editing<br /><span style={{ fontSize: '12px', marginTop: '10px' }}>or create a new one</span></p>
+                            </div>
                         )}
                     </div>
 
