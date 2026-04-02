@@ -5,7 +5,6 @@ import light from "../../Images/themes/light.png";
 import DarkBlue from "../../Images/themes/DarkBlue.png";
 import Default from "../../Images/themes/Default.png";
 import image from "../../Images/Wallpapers/image.jpg";
-// import image1 from "../../Images/Wallpapers/image1.jpg";
 import image2 from "../../Images/Wallpapers/image2.jpg";
 import image3 from "../../Images/Wallpapers/image3.jpg";
 import image4 from "../../Images/Wallpapers/image4.jpg";
@@ -49,6 +48,7 @@ export default Setting
 
 
 export const Themes = () => {
+
     const handleThemeSet = (themeName) => {
         localStorage.setItem("appTheme", themeName);
         
@@ -68,6 +68,25 @@ export const Themes = () => {
                     break;
                 case "darkblue":
                     topNav.style.background = "#1a3a5a99";
+                    break;
+            }
+        }
+        
+        // Apply theme to TabNav
+        const navTab = document.querySelector(".nav-tab");
+        if (navTab) {
+            switch(themeName) {
+                case "default":
+                    navTab.style.background = "#5e5e5e27";
+                    break;
+                case "dark":
+                    navTab.style.background = "#1a1a1a99";
+                    break;
+                case "light":
+                    navTab.style.background = "#e0e0e099";
+                    break;
+                case "darkblue":
+                    navTab.style.background = "#1a3a5a99";
                     break;
             }
         }
@@ -208,8 +227,8 @@ export const Tab_style = () => {
     const [fontColor, setFontColor] = useState("Black");
     const [fontFamily, setFontFamily] = useState("Default");
 
-    const fontSizeMap = { "S": "12px", "M": "14px", "L": "16px" };
-    const fontColors = { "Black": "#000000", "White": "#ffffff", "Red": "#ff5555" };
+    const fontSizeMap = { "S": "12px", "M": "14px", "L": "16px","LX": "20px" };
+    const fontColors = { "Black": "#000000", "White": "#ffffff", "Red": "#ff5555","Green": "#84dd84ff" };
     const fontFamilies = { "Default": "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif", "Courier": "'Courier New', monospace", "Georgia": "Georgia, serif" };
 
     const handleSetStyle = () => {

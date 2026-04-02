@@ -4,6 +4,8 @@
     box-sizing: border-box;
     -webkit-user-select: none;
     user-select: none;
+    scrollbar-width: none !important;
+
 }
 
 :root {
@@ -18,6 +20,7 @@ body {
     width: 100%;
     color: #cfcfcf;
     scrollbar-width: none;
+    /* background: #0c0c0c; */
     font-size: var(--font-size);
     color: var(--font-color);
     font-family: var(--font-family);
