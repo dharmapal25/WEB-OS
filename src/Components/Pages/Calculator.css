@@ -20,7 +20,6 @@
     align-items: flex-end;
     padding: 0 20px 20px 0;
     font-size: 7vw;
-    border-radius: 10px 10px 0 0;
 }
 
 .calt-main-div .calt-cols {
@@ -44,8 +43,8 @@
 .col .btn-num {
     width: 97%;
     height: 97%;
-    margin: 1.5px;
-    border-radius: 8px;
+    margin: 1px;
+    border-radius: 2px;
     border: 1px solid #7a7a7a;
     font-size: 1.3vw;
     color: #ffffff;
@@ -68,4 +67,8 @@
 .input p {
     font-size: 3vw;
     font-weight: 300;
+}
+
+.oprs {
+    background: #4e4e4e86 !important;
 }

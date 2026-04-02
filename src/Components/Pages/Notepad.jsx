@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import menu from "../../Images/Icons/menu.png"
 import add from "../../Images/Icons/file.png"
 import close from "../../Images/Icons/close.png"
 import "./Notepad.css"
@@ -7,7 +6,6 @@ import "./Notepad.css"
 const Notepad = () => {
 
     const [popup, setPopup] = useState(false)
-    const [menuIcon, setMenuIcon] = useState(true)
     const [change, setChange] = useState("")
     const [changetxt, setChangetxt] = useState("")
     const [selectIdx, setSelectIdx] = useState(null)
@@ -76,10 +74,9 @@ const Notepad = () => {
             <div className="main-notes-div">
                 <div className="notes-div">
 
-                    <div className={`filename-div ${menuIcon ? "menu-open" : "menu-closed"}`}>
+                    <div className="filename-div">
                         <div className="new-file-div">
                             <img src={add} alt="add" className="new-file icons-class" onClick={() => setPopup(true)} title="New File" />
-                            <img src={menu} alt="menu" className="new-file icons-class" onClick={() => setMenuIcon(!menuIcon)} title={menuIcon ? "Hide Files" : "Show Files"} />
                         </div>
 
                         {filearr.length === 0 ? (
@@ -88,7 +85,7 @@ const Notepad = () => {
                             </div>
                         ) : (
                             filearr.map((item, index) => (
-                                <div key={index} style={{ position: 'relative', group: 'file' }}>
+                                <div key={index} className='file-item'>
                                     <input
                                         type="text"
                                         className='filename'
@@ -103,6 +100,13 @@ const Notepad = () => {
                                                 : ""
                                         }}
                                     />
+                                    <button
+                                        className='file-delete-btn'
+                                        onClick={() => deleteFile(index)}
+                                        title="Delete file"
+                                    >
+                                        ✕
+                                    </button>
                                 </div>
                             ))
                         )}

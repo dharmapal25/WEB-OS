@@ -111,10 +111,11 @@
 
 import React, { useState } from 'react'
 import calculator from "../Images/Icons/calculatorr.png"
+import Calendar from "../Images/Icons/Calendar.png"
 import gallery from "../Images/Icons/gallery.png"
 import mac_os from "../Images/Icons/mac os.png"
 import music from "../Images/Icons/music.png"
-import Netflix from "../Images/Icons/Netflix.png"
+// import Netflix from "../Images/Icons/Netflix.png"
 import recycle from "../Images/Icons/recycle.png"
 import notepad from "../Images/Icons/Text Edit.png"
 import vscode from "../Images/Icons/vscode.png"
@@ -161,9 +162,9 @@ const BottomNav = () => {
                         <img className="icon" src={docs} alt="Docs" draggable="false" onClick={() => openApp("Docs")} />
                         <img className="icon" src={music} alt="music" draggable="false" onClick={() => openApp("music")} />
                         <img className="icon" src={gallery} alt="gallery" draggable="false" onClick={() => openApp("gallery")} />
-                        <img className="icon" src={Netflix} alt="Netflix" draggable="false" onClick={() => openApp("Netflix")} />
+                        {/* <img className="icon" src={Netflix} alt="Netflix" draggable="false" onClick={() => openApp("Netflix")} /> */}
                         <img className="icon" src={setting} alt="setting" draggable="false" onClick={() => openApp("setting")} />
-                        <img className="icon" src={vscode} alt="vscode" draggable="false" onClick={() => openApp("vscode")} />
+                        <img className="icon" src={Calendar} alt="Calendar" draggable="false" onClick={() => openApp("Calendar")} />
                             <img className="icon" src={notepad} alt="recycle" draggable="false" onClick={() => openApp("notepad")} />
                         <img className="icon" src={calculator} alt="calculator" draggable="false" onClick={() => openApp("calculator")} />
                         <img className="icon" src={terminal} alt="terminal" draggable="false" onClick={() => openApp("terminal")} />
