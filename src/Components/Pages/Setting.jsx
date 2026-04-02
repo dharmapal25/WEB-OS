@@ -72,24 +72,25 @@ export const Themes = () => {
             }
         }
         
-        // Apply theme to TabNav
-        const navTab = document.querySelector(".nav-tab");
-        if (navTab) {
+        // Apply theme to ALL TabNav windows
+        const navTabs = document.querySelectorAll(".nav-tab");
+        navTabs.forEach(navTab => {
             switch(themeName) {
                 case "default":
-                    navTab.style.background = "#5e5e5e27";
+                    navTab.style.background = "linear-gradient(135deg, #5e5e5e27 0%, #4a4a4a27 100%)";
                     break;
                 case "dark":
-                    navTab.style.background = "#1a1a1a99";
+                    navTab.style.background = "linear-gradient(135deg, #1a1a1a99 0%, #0f0f0f99 100%)";
                     break;
                 case "light":
-                    navTab.style.background = "#e0e0e099";
+                    navTab.style.background = "linear-gradient(135deg, #e0e0e099 0%, #d0d0d099 100%)";
+                    navTab.style.color = "#000000";
                     break;
                 case "darkblue":
-                    navTab.style.background = "#1a3a5a99";
+                    navTab.style.background = "linear-gradient(135deg, #1a3a5a99 0%, #0f2a4a99 100%)";
                     break;
             }
-        }
+        });
         
         // Apply theme to BottomNav - background only, keep centered
         const bottomNav = document.querySelector(".bottom-nav");
@@ -138,6 +139,24 @@ export const Themes = () => {
     React.useEffect(() => {
         const savedTheme = localStorage.getItem("appTheme") || "default";
         handleThemeSet(savedTheme);
+        
+        // Watch for new elements and apply theme
+        const observer = new MutationObserver(() => {
+            const newNavTabs = document.querySelectorAll(".nav-tab");
+            newNavTabs.forEach(navTab => {
+                if (!navTab.dataset.themeApplied) {
+                    handleThemeSet(savedTheme);
+                    navTab.dataset.themeApplied = "true";
+                }
+            });
+        });
+        
+        observer.observe(document.body, { 
+            childList: true, 
+            subtree: true 
+        });
+        
+        return () => observer.disconnect();
     }, []);
 
     return (

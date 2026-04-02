@@ -11,7 +11,7 @@ const TopNav = () => {
 
     const [time, setTime] = useState("");
     const [dropdown, setDropdown] = useState(false);
-
+    const [hoverMenu, setHoverMenu] = useState(null);
 
     useEffect(() => {
         const update = () => {
@@ -31,18 +31,30 @@ const TopNav = () => {
         setDropdown(!dropdown)
     }
 
+    const menuItems = ["File", "View", "History", "Windows", "Help"];
+    const dummyMenuItems = ["Option 1", "Option 2", "Option 3", "Option 4", "Option 5"];
+
     return (
         <div>
-
             <div className="mac-nav">
                 <div className="logo-navigators">
                     <img src={apple_logo} alt="logo" className='apple_logo' />
-                    <p>File</p>
-                    <p>Edit</p>
-                    <p>View</p>
-                    <p>History</p>
-                    <p>Window</p>
-                    <p>Help</p>
+                    <div className="nav-menu-container">
+                        {menuItems.map((item) => (
+                            <div key={item} className="nav-menu-item"
+                                onMouseEnter={() => setHoverMenu(item)}
+                                onMouseLeave={() => setHoverMenu(null)}>
+                                <p>{item}</p>
+                                {hoverMenu === item && (
+                                    <div className="nav-dropdown">
+                                        {dummyMenuItems.map((subItem) => (
+                                            <div key={subItem} className="dropdown-item">{subItem}</div>
+                                        ))}
+                                    </div>
+                                )}
+                            </div>
+                        ))}
+                    </div>
                 </div>
 
                 <div className="wifi-time">
@@ -50,19 +62,11 @@ const TopNav = () => {
                         <img draggable="false" src={wifi} alt="wifi" className='wifi' />
                         <img draggable="false" src={search} alt="search" className='search' />
                         <img draggable="false" src={control} alt="control" className='control' onClick={dropDownCall} />
-
-                        {
-                            (dropdown) ? <Dropdown/> : ""
-                        }
-                       
+                        {dropdown && <Dropdown />}
                     </div>
-
                     <p className='time'>{time}</p>
                 </div>
-
-
             </div>
-
         </div>
     )
 }
